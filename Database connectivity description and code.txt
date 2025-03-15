@@ -1,0 +1,182 @@
+Description
+
+Database name:- website_data
+
+1. Blog page database
+table name:- comments_table
+
+Table Columns:
+
+comment_id: INT type, AUTO_INCREMENT, PRIMARY KEY
+name: VARCHAR(50)
+email: VARCHAR(100)
+comment: TEXT
+date_time: DATETIME, DEFAULT CURRENT_TIMESTAMP
+
+2. Contact us database
+table name:- contact_submissions
+
+Table Columns:
+
+submission_id: INT AUTO_INCREMENT PRIMARY KEY - This column will serve as the unique identifier for each submission.
+name: VARCHAR(100) - To store the name of the person submitting the form.
+email: VARCHAR(100) - To store the email address of the person submitting the form.
+subject: VARCHAR(255) - To store the subject of the message.
+message: TEXT - To store the message content.
+submission_date: DATETIME DEFAULT CURRENT_TIMESTAMP - To store the date and time of the submission.
+
+3. Undergraduate database
+table Name:- undergraduate_submissions
+
+Table Columns:
+
+submission_id: INT AUTO_INCREMENT PRIMARY KEY - Unique identifier for each submission.
+firstname: VARCHAR(50) - To store the first name of the student.
+middlename: VARCHAR(50) - To store the middle name of the student.
+lastname: VARCHAR(50) - To store the last name of the student.
+course: VARCHAR(50) - To store the selected course.
+gender: ENUM('Male', 'Female', 'Other') - To store the gender of the student.
+phone: VARCHAR(15) - To store the phone number of the student.
+address: TEXT - To store the current address of the student.
+email: VARCHAR(100) - To store the email address of the student.
+10th_percentage: FLOAT - To store the 10th class percentage of the student.
+12th_percentage: FLOAT - To store the 12th class percentage of the student.
+undergraduate_percentage: FLOAT - To store the undergraduate percentage of the student.
+password: VARCHAR(255) - To store the password entered by the student.
+
+4. Postgraduate database
+table Name:- postgraduate_submissions
+
+Table Columns:
+
+submission_id: INT AUTO_INCREMENT PRIMARY KEY - Unique identifier for each submission.
+firstname: VARCHAR(50) - To store the first name of the student.
+middlename: VARCHAR(50) - To store the middle name of the student.
+lastname: VARCHAR(50) - To store the last name of the student.
+course: VARCHAR(50) - To store the selected course.
+gender: ENUM('Male', 'Female', 'Other') - To store the gender of the student.
+phone: VARCHAR(15) - To store the phone number of the student.
+address: TEXT - To store the current address of the student.
+email: VARCHAR(100) - To store the email address of the student.
+10th_percentage: FLOAT - To store the 10th class percentage of the student.
+12th_percentage: FLOAT - To store the 12th class percentage of the student.
+undergraduate_percentage: FLOAT - To store the undergraduate percentage of the student.
+password: VARCHAR(255) - To store the password entered by the student.
+
+5. Other courses database
+Table Name:- postgraduate_submissions
+
+Table Columns:
+submission_id: INT AUTO_INCREMENT PRIMARY KEY - Unique identifier for each submission.
+firstname: VARCHAR(50) - To store the first name of the student.
+middlename: VARCHAR(50) - To store the middle name of the student.
+lastname: VARCHAR(50) - To store the last name of the student.
+course: VARCHAR(50) - To store the selected course.
+gender: ENUM('Male', 'Female', 'Other') - To store the gender of the student.
+phone: VARCHAR(15) - To store the phone number of the student.
+address: TEXT - To store the current address of the student.
+email: VARCHAR(100) - To store the email address of the student.
+10th_percentage: FLOAT - To store the 10th class percentage of the student.
+12th_percentage: FLOAT - To store the 12th class percentage of the student.
+undergraduate_percentage: FLOAT - To store the undergraduate percentage of the student.
+password: VARCHAR(255) - To store the password entered by the student.
+
+6. Login and sign up database
+Table Name:- users
+
+Table Columns:
+user_id: INT AUTO_INCREMENT PRIMARY KEY - This will serve as the unique identifier for each user.
+username: VARCHAR(50) - To store the username entered by the user during login and sign up.
+email: VARCHAR(100) - To store the email entered by the user during sign up.
+password: VARCHAR(255) - To store the hashed password entered by the user during sign up.
+created_at: DATETIME DEFAULT CURRENT_TIMESTAMP - To store the timestamp of when the user account was created.
+
+
+Code:-
+1. Blog page database code
+:- CREATE TABLE blog_comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    comment TEXT,
+    date_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+2. Contact us database code
+:- CREATE TABLE contact_messages (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    subject VARCHAR(100),
+    message TEXT,
+    date_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+3. Undergraduate database code
+:- CREATE TABLE undergraduate_students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50),
+    middlename VARCHAR(50),
+    lastname VARCHAR(50),
+    course VARCHAR(50),
+    gender ENUM('Male', 'Female', 'Other'),
+    country_code VARCHAR(5),
+    phone VARCHAR(15),
+    address TEXT,
+    email VARCHAR(100),
+    tenth_percentage DECIMAL(5,2),
+    twelfth_percentage DECIMAL(5,2),
+    undergraduate_percentage DECIMAL(5,2),
+    password VARCHAR(50)
+);
+
+
+4. Postgraduate database code
+:- CREATE TABLE postgraduate_students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50),
+    middlename VARCHAR(50),
+    lastname VARCHAR(50),
+    course VARCHAR(50),
+    gender ENUM('Male', 'Female', 'Other'),
+    country_code VARCHAR(5),
+    phone VARCHAR(15),
+    address TEXT,
+    email VARCHAR(100),
+    tenth_percentage DECIMAL(5,2),
+    twelfth_percentage DECIMAL(5,2),
+    undergraduate_percentage DECIMAL(5,2),
+    password VARCHAR(50)
+);
+
+
+5. Other courses database code
+:- CREATE TABLE other_courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    middlename VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    course VARCHAR(50) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    country_code VARCHAR(5) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    address TEXT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    10thPercentage DECIMAL(5, 2) NOT NULL,
+    12thPercentage DECIMAL(5, 2) NOT NULL,
+    undergraduatePercentage DECIMAL(5, 2) NOT NULL,
+    psw VARCHAR(255) NOT NULL
+);
+
+
+6. Login and sign up database code
+:- CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    password VARCHAR(50)
+);
+
+
